@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "name": "Deadpool",
+    "realName": "Wade Wilson",
+    "powers": ["Regeneración", "Inmortalidad", "Experto en armas"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=400&fit=crop",
+    "description": "Mercenario con factor de curación y sentido del humor retorcido"
+  },
+  {
+    "id": 2,
+    "name": "Joker",
+    "realName": "Desconocido",
+    "powers": ["Genio criminal", "Manipulación", "Caos"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=400&h=400&fit=crop",
+    "description": "El príncipe del crimen de Gotham City"
+  },
+  {
+    "id": 3,
+    "name": "Venom",
+    "realName": "Eddie Brock",
+    "powers": ["Fuerza sobrehumana", "Simbiosis", "Cambio de forma"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&h=400&fit=crop",
+    "description": "Simbionte alienígena con sed de justicia violenta"
+  },
+  {
+    "id": 4,
+    "name": "Harley Quinn",
+    "realName": "Harleen Quinzel",
+    "powers": ["Acrobacia", "Inmunidad a toxinas", "Combate"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?w=400&h=400&fit=crop",
+    "description": "Ex psiquiatra convertida en criminal caótica"
+  },
+  {
+    "id": 5,
+    "name": "Punisher",
+    "realName": "Frank Castle",
+    "powers": ["Experto en combate", "Tácticas militares", "Arsenal"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop",
+    "description": "Vigilante que busca venganza contra el crimen"
+  },
+  {
+    "id": 6,
+    "name": "Catwoman",
+    "realName": "Selina Kyle",
+    "powers": ["Agilidad felina", "Sigilo", "Experta ladrona"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=400&fit=crop",
+    "description": "Ladrona maestra con código moral ambiguo"
+  },
+  {
+    "id": 7,
+    "name": "Loki",
+    "realName": "Loki Laufeyson",
+    "powers": ["Magia", "Ilusiones", "Cambio de forma"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1635863138275-d9b33299680b?w=400&h=400&fit=crop",
+    "description": "Dios de las travesuras y el engaño"
+  },
+  {
+    "id": 8,
+    "name": "Rorschach",
+    "realName": "Walter Kovacs",
+    "powers": ["Detective", "Combate cuerpo a cuerpo", "Determinación"],
+    "universe": "DC/Watchmen",
+    "image": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+    "description": "Vigilante sin compromiso con la justicia absoluta"
+  },
+  {
+    "id": 9,
+    "name": "Magneto",
+    "realName": "Erik Lehnsherr",
+    "powers": ["Control magnético", "Vuelo", "Manipulación de metales"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=400&h=400&fit=crop",
+    "description": "Mutante que lucha por la supremacía de su especie"
+  },
+  {
+    "id": 10,
+    "name": "Red Hood",
+    "realName": "Jason Todd",
+    "powers": ["Combate experto", "Tácticas", "Arsenal"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1608889476588-6d1e1b5a5b3f?w=400&h=400&fit=crop",
+    "description": "Ex Robin que adoptó métodos más letales"
+  },
+  {
+    "id": 11,
+    "name": "Winter Soldier",
+    "realName": "Bucky Barnes",
+    "powers": ["Brazo biónico", "Combate", "Asesino entrenado"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop",
+    "description": "Soldado mejorado con pasado oscuro"
+  },
+  {
+    "id": 12,
+    "name": "Poison Ivy",
+    "realName": "Pamela Isley",
+    "powers": ["Control de plantas", "Toxinas", "Inmunidad"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=400&fit=crop",
+    "description": "Eco-terrorista con poderes botánicos"
+  },
+  {
+    "id": 13,
+    "name": "Blade",
+    "realName": "Eric Brooks",
+    "powers": ["Cazador de vampiros", "Fuerza sobrehumana", "Inmortalidad"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+    "description": "Mitad vampiro, mitad humano, cazador completo"
+  },
+  {
+    "id": 14,
+    "name": "Deathstroke",
+    "realName": "Slade Wilson",
+    "powers": ["Fuerza mejorada", "Regeneración", "Táctico genio"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop",
+    "description": "Mercenario mejorado genéticamente"
+  },
+  {
+    "id": 15,
+    "name": "Ghost Rider",
+    "realName": "Johnny Blaze",
+    "powers": ["Fuego infernal", "Cadena mística", "Mirada penitente"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop",
+    "description": "Espíritu de venganza con calavera en llamas"
+  },
+  {
+    "id": 16,
+    "name": "Black Adam",
+    "realName": "Teth-Adam",
+    "powers": ["Fuerza de dioses", "Vuelo", "Magia"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+    "description": "Antiguo campeón con métodos brutales"
+  },
+  {
+    "id": 17,
+    "name": "Mystique",
+    "realName": "Raven Darkhölme",
+    "powers": ["Cambio de forma", "Longevidad", "Combate"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+    "description": "Mutante metamorfa con agenda propia"
+  },
+  {
+    "id": 18,
+    "name": "Spawn",
+    "realName": "Al Simmons",
+    "powers": ["Necroplasma", "Teletransporte", "Cadenas infernales"],
+    "universe": "Image",
+    "image": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+    "description": "Soldado resucitado como demonio del infierno"
+  },
+  {
+    "id": 19,
+    "name": "Scarlet Witch",
+    "realName": "Wanda Maximoff",
+    "powers": ["Magia del caos", "Alteración de realidad", "Telequinesis"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+    "description": "Bruja con poderes que alteran la realidad"
+  },
+  {
+    "id": 20,
+    "name": "Lobo",
+    "realName": "Lobo",
+    "powers": ["Inmortalidad", "Fuerza sobrehumana", "Regeneración"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop",
+    "description": "Cazarrecompensas intergaláctico indestructible"
+  },
+  {
+    "id": 21,
+    "name": "Carnage",
+    "realName": "Cletus Kasady",
+    "powers": ["Simbionte", "Fuerza sobrehumana", "Armas orgánicas"],
+    "universe": "Marvel",
+    "image": "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&h=400&fit=crop",
+    "description": "Simbionte psicópata sediento de sangre"
+  },
+  {
+    "id": 22,
+    "name": "Bane",
+    "realName": "Desconocido",
+    "powers": ["Fuerza mejorada por Venom", "Intelecto", "Tácticas"],
+    "universe": "DC",
+    "image": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=400&fit=crop",
+    "description": "El hombre que rompió al murciélago"
+  }
+]
