@@ -21,8 +21,7 @@ const teamMembers = [
     id: "manuel",
     name: "Manuel",
     role: "Backend Developer",
-    image:
-      "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&h=400&fit=crop",
+    image: "/manuel_img_perfil.png",
     description: "Especialista en arquitectura backend",
   },
   {

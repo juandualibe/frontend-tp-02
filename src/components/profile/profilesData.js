@@ -63,8 +63,7 @@ export const profilesData = {
   manuel: {
     name: "Manuel",
     role: "Backend Developer",
-    image:
-      "https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&h=400&fit=crop",
+    image: "/manuel_img_perfil.png",
     bio: "Especialista en arquitectura backend y bases de datos. Me enfoco en crear sistemas escalables, seguros y eficientes. Disfruto optimizando el rendimiento y resolviendo desafíos técnicos complejos.",
     skills: [
       "Node.js",
