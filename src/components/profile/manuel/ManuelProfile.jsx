@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMediaQuery } from "../../../hooks/MediaQuery";
 import { manuelData } from "./manuelData";
 import { manuelStyles as styles } from "./manuelStyles";
+import Pokeball from "./Pokeball";
 
 export default function ManuelProfile() {
   const [showMovies, setShowMovies] = useState(false);
@@ -53,56 +54,22 @@ export default function ManuelProfile() {
         <div style={{ margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
           {/* Movies */}
           <div style={styles.section}>
-            <button
-              style={styles.toggleButton}
-              onClick={() => setShowMovies(!showMovies)}
-            >
-              <span style={styles.buttonText}>Películas Favoritas</span>
-              <span style={styles.arrow}>{showMovies ? "▼" : "▶"}</span>
-            </button>
-            {showMovies && (
-              <ul style={styles.list}>
-                {manuelData.movies.map((movie, index) => (
-                  <li key={index} style={styles.listItem}>
-                    <a
-                      href={movie.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={styles.link}
-                    >
-                      {movie.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <h3 style={styles.buttonText}>🎬 Películas Favoritas</h3>
+            <div style={styles.pokeballsContainer}>
+              {manuelData.movies.map((movie, index) => (
+                <Pokeball key={index} item={movie} type="movie" />
+              ))}
+            </div>
           </div>
 
           {/* Music */}
           <div style={styles.section}>
-            <button
-              style={styles.toggleButton}
-              onClick={() => setShowMusic(!showMusic)}
-            >
-              <span style={styles.buttonText}>Música Favorita</span>
-              <span style={styles.arrow}>{showMusic ? "▼" : "▶"}</span>
-            </button>
-            {showMusic && (
-              <ul style={styles.list}>
-                {manuelData.music.map((song, index) => (
-                  <li key={index} style={styles.listItem}>
-                    <a
-                      href={song.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={styles.link}
-                    >
-                      {song.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <h3 style={styles.buttonText}>🎵 Música Favorita</h3>
+            <div style={styles.pokeballsContainer}>
+              {manuelData.music.map((song, index) => (
+                <Pokeball key={index} item={song} type="music" />
+              ))}
+            </div>
           </div>
         </div>
       </section>

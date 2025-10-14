@@ -109,4 +109,15 @@ export const manuelStyles = {
     textDecoration: "none",
     transition: "color 0.3s ease",
   },
+  
+  // Contenedor de pokebolas
+  pokeballsContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "30px",
+    justifyContent: "space-around",
+    alignItems: "center",
+    marginTop: "30px",
+    padding: "20px",
+  },
 };
