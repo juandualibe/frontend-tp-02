@@ -15,6 +15,17 @@ export default function ManuelProfile() {
     <div style={{ minHeight: "100vh" }}>
       {/* Header Section */}
       <section style={styles.header}>
+        {/* Video de fondo */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={styles.headerVideo}
+        >
+          <source src="/manuel_video_header.mp4" type="video/mp4" />
+        </video>
+        {/* Contenido del header */}
         <div style={styles.headerContent(isTablet)}>
           <img
             src={manuelData.image || "/placeholder.svg"}

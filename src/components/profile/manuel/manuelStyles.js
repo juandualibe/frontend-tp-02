@@ -4,16 +4,33 @@
 export const manuelStyles = {
   // Estilos del Header
   header: {
+    position: "relative",
     background: "linear-gradient(135deg, #1a0a1a 0%, #2d0a1a 100%)",
-    padding: "60px 40px",
+    padding: "60px 0 60px 40px",
     borderBottom: "3px solid #8b0000",
+    overflow: "hidden",
+    minHeight: "400px",
+    display: "flex",
+    alignItems: "center",
+  },
+  headerVideo: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    zIndex: 0,
+    objectFit: "cover",
   },
   headerContent: (isTablet) => ({
-    margin: "0 auto",
+    position: "relative",
+    zIndex: 2,
+    width: "100%",
     display: "flex",
     flexDirection: isTablet ? "row" : "column",
-    alignItems: "center",
+    alignItems: isTablet ? "center" : "flex-start",
     columnGap: "40px",
+    justifyContent: "flex-start",
   }),
   profileImage: {
     width: "200px",
@@ -21,19 +38,21 @@ export const manuelStyles = {
     borderRadius: "50%",
     objectFit: "cover",
     border: "4px solid #ff0000",
-    boxShadow: "0 0 30px rgba(255, 0, 0, 0.5)",
+    boxShadow: "0 0 30px rgba(255, 0, 0, 0.8), 0 0 60px rgba(255, 0, 0, 0.4)",
   },
   name: {
     fontSize: "48px",
     color: "#ff0000",
     marginBottom: "10px",
     fontFamily: "Creepster, cursive",
-    textShadow: "0 0 15px #ff0000",
+    textShadow: "0 0 20px #ff0000, 0 0 40px #ff0000, 2px 2px 4px rgba(0, 0, 0, 0.9)",
   },
   role: {
     fontSize: "24px",
-    color: "#b0b0b0",
+    color: "#ffffff",
     fontStyle: "italic",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8)",
+    fontWeight: "500",
   },
 
   // Estilos de Info
