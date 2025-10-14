@@ -1,11 +1,6 @@
 "use client";
 
-import { useParams } from "react-router-dom";
-import Sidebar from "../../components/navigation/Sidebar";
-import ProfileHeader from "../../components/profile/ProfileHeader";
-import ProfileInfo from "../../components/profile/ProfileInfo";
-import ProfileSections from "../../components/profile/ProfileSections";
-import Footer from "../../components/navigation/Footer";
+import { useParams, Navigate } from "react-router-dom";
 
 // Importar perfiles personalizados
 import ManuelProfile from "../../components/profile/manuel/ManuelProfile";
@@ -34,18 +29,6 @@ export default function ProfilePage() {
     return <NicolasProfile />;
   }
 
-  // Fallback para cualquier otro caso
-  return (
-    <div style={styles.container}>
-      <ProfileHeader memberId={memberId} />
-      <ProfileInfo memberId={memberId} />
-      <ProfileSections memberId={memberId} />
-    </div>
-  );
+  // Si el ID no existe, redirigir al inicio
+  return <Navigate to="/" replace />;
 }
-
-const styles = {
-  container: {
-    minHeight: "100vh",
-  },
-};

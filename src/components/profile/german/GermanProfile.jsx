@@ -1,127 +1,111 @@
-import { useState } from 'react';
-import { germanData } from './germanData';
-import { germanStyles } from './germanStyles';
-import { useMediaQuery } from '../../../hooks/MediaQuery';
+"use client";
 
-function GermanProfile() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  
-  // Estados para controlar qué secciones están expandidas
+import { useState } from "react";
+import { useMediaQuery } from "../../../hooks/MediaQuery";
+import { germanData } from "./germanData";
+import { germanStyles as styles } from "./germanStyles";
+
+export default function GermanProfile() {
   const [showMovies, setShowMovies] = useState(false);
   const [showMusic, setShowMusic] = useState(false);
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div style={germanStyles.profileContainer}>
-      {/* HEADER - Tu foto, nombre y rol */}
-      <div style={germanStyles.profileHeader}>
-        <div style={germanStyles.headerContent(isMobile)}>
-          <div style={germanStyles.imageContainer}>
-            <img 
-              src={germanData.image} 
-              alt={germanData.name}
-              style={germanStyles.profileImage}
-            />
-          </div>
-          <div style={germanStyles.textContainer}>
-            <h1 style={germanStyles.name}>{germanData.name}</h1>
-            <p style={germanStyles.role}>{germanData.role}</p>
+    <div style={{ minHeight: "100vh" }}>
+      {/* Header Section */}
+      <section style={styles.header}>
+        <div style={styles.headerContent(isTablet)}>
+          <img
+            src={germanData.image || "/placeholder.svg"}
+            alt={germanData.name}
+            style={styles.profileImage}
+          />
+          <div style={{ flex: 1 }}>
+            <h1 style={styles.name}>{germanData.name}</h1>
+            <p style={styles.role}>{germanData.role}</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* SECCIÓN DE INFORMACIÓN - Biografía y habilidades */}
-      <div style={germanStyles.infoSection}>
-        <h2 style={germanStyles.sectionTitle}>Sobre mí</h2>
-        <p style={germanStyles.bioText}>{germanData.bio}</p>
+      {/* Info Section */}
+      <section style={styles.info}>
+        <div style={{ margin: "0 auto" }}>
+          <div style={{ marginBottom: "40px" }}>
+            <h2 style={styles.sectionTitle}>Sobre mí</h2>
+            <p style={styles.bio}>{germanData.bio}</p>
+          </div>
 
-        <h2 style={germanStyles.sectionTitle}>Habilidades</h2>
-        <div style={germanStyles.skillsContainer}>
-          {germanData.skills.map((skill, index) => (
-            <span key={index} style={germanStyles.skillBadge}>
-              {skill}
-            </span>
-          ))}
+          <div style={{ marginBottom: "40px" }}>
+            <h2 style={styles.sectionTitle}>Habilidades</h2>
+            <div style={styles.skills}>
+              {germanData.skills.map((skill, index) => (
+                <span key={index} style={styles.skillTag}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* SECCIÓN DE PELÍCULAS */}
-      <div style={germanStyles.customSection}>
-        <button 
-          onClick={() => setShowMovies(!showMovies)}
-          style={germanStyles.toggleButton}
-          onMouseEnter={(e) => e.target.style.transform = 'scale(1.02)'}
-          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-        >
-          <span>🎬 Mis Películas Favoritas</span>
-          <span>{showMovies ? '▲' : '▼'}</span>
-        </button>
-
-        {showMovies && (
-          <div style={germanStyles.cardsContainer}>
-            {germanData.movies.map((movie, index) => (
-              <div 
-                key={index} 
-                style={germanStyles.card}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <h3 style={germanStyles.cardTitle}>{movie.title}</h3>
-                <p style={germanStyles.cardSubtitle}>
-                  {movie.year} • Director: {movie.director}
-                </p>
-                <p style={germanStyles.cardText}>{movie.reason}</p>
-              </div>
-            ))}
+      {/* Movies and Music Section */}
+      <section style={styles.sections}>
+        <div style={{ margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
+          {/* Movies */}
+          <div style={styles.section}>
+            <button
+              style={styles.toggleButton}
+              onClick={() => setShowMovies(!showMovies)}
+            >
+              <span style={styles.buttonText}>Películas Favoritas</span>
+              <span style={styles.arrow}>{showMovies ? "▼" : "▶"}</span>
+            </button>
+            {showMovies && (
+              <ul style={styles.list}>
+                {germanData.movies.map((movie, index) => (
+                  <li key={index} style={styles.listItem}>
+                    <a
+                      href={movie.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={styles.link}
+                    >
+                      {movie.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* SECCIÓN DE MÚSICA */}
-      <div style={germanStyles.customSection}>
-        <button 
-          onClick={() => setShowMusic(!showMusic)}
-          style={germanStyles.toggleButton}
-          onMouseEnter={(e) => e.target.style.transform = 'scale(1.02)'}
-          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-        >
-          <span>🎵 Mi Música Favorita</span>
-          <span>{showMusic ? '▲' : '▼'}</span>
-        </button>
-
-        {showMusic && (
-          <div style={germanStyles.cardsContainer}>
-            {germanData.music.map((item, index) => (
-              <div 
-                key={index} 
-                style={germanStyles.card}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <h3 style={germanStyles.cardTitle}>{item.artist}</h3>
-                <p style={germanStyles.cardSubtitle}>Género: {item.genre}</p>
-                <p style={germanStyles.cardText}>{item.reason}</p>
-              </div>
-            ))}
+          {/* Music */}
+          <div style={styles.section}>
+            <button
+              style={styles.toggleButton}
+              onClick={() => setShowMusic(!showMusic)}
+            >
+              <span style={styles.buttonText}>Música Favorita</span>
+              <span style={styles.arrow}>{showMusic ? "▼" : "▶"}</span>
+            </button>
+            {showMusic && (
+              <ul style={styles.list}>
+                {germanData.music.map((song, index) => (
+                  <li key={index} style={styles.listItem}>
+                    <a
+                      href={song.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={styles.link}
+                    >
+                      {song.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
-      </div>
-
-      {/* AQUÍ PUEDES AGREGAR MÁS SECCIONES PERSONALIZADAS */}
-      {/* Por ejemplo: hobbies, proyectos, experiencia, etc. */}
+        </div>
+      </section>
     </div>
   );
 }
-
-export default GermanProfile;

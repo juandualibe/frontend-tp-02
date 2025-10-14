@@ -1,127 +1,111 @@
-import { useState } from 'react';
-import { juanData } from './juanData';
-import { juanStyles } from './juanStyles';
-import { useMediaQuery } from '../../../hooks/MediaQuery';
+"use client";
 
-function JuanProfile() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  
-  // Estados para controlar qué secciones están expandidas
+import { useState } from "react";
+import { useMediaQuery } from "../../../hooks/MediaQuery";
+import { juanData } from "./juanData";
+import { juanStyles as styles } from "./juanStyles";
+
+export default function JuanProfile() {
   const [showMovies, setShowMovies] = useState(false);
   const [showMusic, setShowMusic] = useState(false);
+  const isTablet = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div style={juanStyles.profileContainer}>
-      {/* HEADER - Tu foto, nombre y rol */}
-      <div style={juanStyles.profileHeader}>
-        <div style={juanStyles.headerContent(isMobile)}>
-          <div style={juanStyles.imageContainer}>
-            <img 
-              src={juanData.image} 
-              alt={juanData.name}
-              style={juanStyles.profileImage}
-            />
-          </div>
-          <div style={juanStyles.textContainer}>
-            <h1 style={juanStyles.name}>{juanData.name}</h1>
-            <p style={juanStyles.role}>{juanData.role}</p>
+    <div style={{ minHeight: "100vh" }}>
+      {/* Header Section */}
+      <section style={styles.header}>
+        <div style={styles.headerContent(isTablet)}>
+          <img
+            src={juanData.image || "/placeholder.svg"}
+            alt={juanData.name}
+            style={styles.profileImage}
+          />
+          <div style={{ flex: 1 }}>
+            <h1 style={styles.name}>{juanData.name}</h1>
+            <p style={styles.role}>{juanData.role}</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* SECCIÓN DE INFORMACIÓN - Biografía y habilidades */}
-      <div style={juanStyles.infoSection}>
-        <h2 style={juanStyles.sectionTitle}>Sobre mí</h2>
-        <p style={juanStyles.bioText}>{juanData.bio}</p>
+      {/* Info Section */}
+      <section style={styles.info}>
+        <div style={{ margin: "0 auto" }}>
+          <div style={{ marginBottom: "40px" }}>
+            <h2 style={styles.sectionTitle}>Sobre mí</h2>
+            <p style={styles.bio}>{juanData.bio}</p>
+          </div>
 
-        <h2 style={juanStyles.sectionTitle}>Habilidades</h2>
-        <div style={juanStyles.skillsContainer}>
-          {juanData.skills.map((skill, index) => (
-            <span key={index} style={juanStyles.skillBadge}>
-              {skill}
-            </span>
-          ))}
+          <div style={{ marginBottom: "40px" }}>
+            <h2 style={styles.sectionTitle}>Habilidades</h2>
+            <div style={styles.skills}>
+              {juanData.skills.map((skill, index) => (
+                <span key={index} style={styles.skillTag}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* SECCIÓN DE PELÍCULAS */}
-      <div style={juanStyles.customSection}>
-        <button 
-          onClick={() => setShowMovies(!showMovies)}
-          style={juanStyles.toggleButton}
-          onMouseEnter={(e) => e.target.style.transform = 'scale(1.02)'}
-          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-        >
-          <span>🎬 Mis Películas Favoritas</span>
-          <span>{showMovies ? '▲' : '▼'}</span>
-        </button>
-
-        {showMovies && (
-          <div style={juanStyles.cardsContainer}>
-            {juanData.movies.map((movie, index) => (
-              <div 
-                key={index} 
-                style={juanStyles.card}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <h3 style={juanStyles.cardTitle}>{movie.title}</h3>
-                <p style={juanStyles.cardSubtitle}>
-                  {movie.year} • Director: {movie.director}
-                </p>
-                <p style={juanStyles.cardText}>{movie.reason}</p>
-              </div>
-            ))}
+      {/* Movies and Music Section */}
+      <section style={styles.sections}>
+        <div style={{ margin: "0 auto", display: "flex", flexDirection: "column", gap: "30px" }}>
+          {/* Movies */}
+          <div style={styles.section}>
+            <button
+              style={styles.toggleButton}
+              onClick={() => setShowMovies(!showMovies)}
+            >
+              <span style={styles.buttonText}>Películas Favoritas</span>
+              <span style={styles.arrow}>{showMovies ? "▼" : "▶"}</span>
+            </button>
+            {showMovies && (
+              <ul style={styles.list}>
+                {juanData.movies.map((movie, index) => (
+                  <li key={index} style={styles.listItem}>
+                    <a
+                      href={movie.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={styles.link}
+                    >
+                      {movie.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* SECCIÓN DE MÚSICA */}
-      <div style={juanStyles.customSection}>
-        <button 
-          onClick={() => setShowMusic(!showMusic)}
-          style={juanStyles.toggleButton}
-          onMouseEnter={(e) => e.target.style.transform = 'scale(1.02)'}
-          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-        >
-          <span>🎵 Mi Música Favorita</span>
-          <span>{showMusic ? '▲' : '▼'}</span>
-        </button>
-
-        {showMusic && (
-          <div style={juanStyles.cardsContainer}>
-            {juanData.music.map((item, index) => (
-              <div 
-                key={index} 
-                style={juanStyles.card}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <h3 style={juanStyles.cardTitle}>{item.artist}</h3>
-                <p style={juanStyles.cardSubtitle}>Género: {item.genre}</p>
-                <p style={juanStyles.cardText}>{item.reason}</p>
-              </div>
-            ))}
+          {/* Music */}
+          <div style={styles.section}>
+            <button
+              style={styles.toggleButton}
+              onClick={() => setShowMusic(!showMusic)}
+            >
+              <span style={styles.buttonText}>Música Favorita</span>
+              <span style={styles.arrow}>{showMusic ? "▼" : "▶"}</span>
+            </button>
+            {showMusic && (
+              <ul style={styles.list}>
+                {juanData.music.map((song, index) => (
+                  <li key={index} style={styles.listItem}>
+                    <a
+                      href={song.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={styles.link}
+                    >
+                      {song.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        )}
-      </div>
-
-      {/* AQUÍ PUEDES AGREGAR MÁS SECCIONES PERSONALIZADAS */}
-      {/* Por ejemplo: hobbies, proyectos, experiencia, etc. */}
+        </div>
+      </section>
     </div>
   );
 }
-
-export default JuanProfile;

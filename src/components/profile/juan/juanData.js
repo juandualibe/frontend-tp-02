@@ -1,59 +1,29 @@
-// Datos personales de Juan
-// Aquí puedes modificar toda tu información personal
-
+// Datos personalizados del perfil de Juan
 export const juanData = {
   name: "Juan",
-  role: "Desarrollador Frontend",
-  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-  bio: "Soy Juan y me apasiona el desarrollo web. Aquí puedes escribir tu biografía personal, hablar sobre tus intereses, tu experiencia, lo que te motiva en el mundo de la programación, etc.",
-  
-  // Puedes agregar o quitar habilidades
-  skills: [
-    "JavaScript",
-    "React",
-    "CSS",
-    "HTML",
-    "Git"
-  ],
-  
-  // Películas favoritas - puedes agregar tantas como quieras
+  role: "Full Stack Developer",
+  image: "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+  bio: "Desarrollador versátil y creativo con experiencia en múltiples tecnologías. Me apasiona el diseño de interfaces y la experiencia de usuario, siempre buscando crear productos que sean tanto funcionales como estéticamente agradables.",
+  skills: ["JavaScript", "React", "Node.js", "UI/UX Design", "Full Stack"],
   movies: [
+    { title: "Deadpool", url: "https://www.imdb.com/title/tt1431045/" },
     {
-      title: "Película 1",
-      year: 2020,
-      director: "Director 1",
-      reason: "¿Por qué te gusta esta película?"
+      title: "Guardians of the Galaxy",
+      url: "https://www.imdb.com/title/tt2015381/",
     },
     {
-      title: "Película 2",
-      year: 2019,
-      director: "Director 2",
-      reason: "¿Qué te llamó la atención de esta película?"
+      title: "Spider-Man: Into the Spider-Verse",
+      url: "https://www.imdb.com/title/tt4633694/",
     },
-    {
-      title: "Película 3",
-      year: 2018,
-      director: "Director 3",
-      reason: "¿Qué te transmitió esta película?"
-    }
   ],
-  
-  // Música favorita - personaliza con tus artistas/bandas
   music: [
     {
-      artist: "Artista/Banda 1",
-      genre: "Género musical",
-      reason: "¿Por qué te gusta?"
+      title: "Mr. Blue Sky - Electric Light Orchestra",
+      url: "https://www.youtube.com/watch?v=wuJIqmha2Hc",
     },
     {
-      artist: "Artista/Banda 2",
-      genre: "Género musical",
-      reason: "¿Qué te transmite su música?"
+      title: "September - Earth, Wind & Fire",
+      url: "https://www.youtube.com/watch?v=Gs069dndIYk",
     },
-    {
-      artist: "Artista/Banda 3",
-      genre: "Género musical",
-      reason: "¿Cuál es tu canción favorita?"
-    }
-  ]
+  ],
 };

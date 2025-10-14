@@ -1,173 +1,112 @@
-// Estilos personalizados de Nicolás
-// Aquí puedes cambiar todos los colores, tamaños, fuentes, etc.
+// Estilos personalizados para el perfil de Nicolás
+// Puedes modificar estos estilos libremente sin afectar a otros perfiles
 
 export const nicolasStyles = {
-  // Contenedor principal del perfil
-  profileContainer: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column"
+  // Estilos del Header
+  header: {
+    background: "linear-gradient(135deg, #1a0a1a 0%, #2d0a1a 100%)",
+    padding: "60px 40px",
+    borderBottom: "3px solid #8b0000",
   },
-
-  // Encabezado del perfil (donde está tu foto y nombre)
-  profileHeader: {
-    background: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)", // Cambia estos colores
-    padding: "4rem 2rem",
-    textAlign: "center",
-    color: "white"
-  },
-
-  // Función para estilos responsivos del contenido del header
-  headerContent: (isMobile) => ({
-    maxWidth: "1200px",
+  headerContent: (isTablet) => ({
     margin: "0 auto",
     display: "flex",
-    flexDirection: isMobile ? "column" : "row",
+    flexDirection: isTablet ? "row" : "column",
     alignItems: "center",
-    gap: "2rem"
+    columnGap: "40px",
   }),
-
-  // Contenedor de la imagen
-  imageContainer: {
-    flex: "0 0 auto"
-  },
-
-  // La imagen de perfil
   profileImage: {
     width: "200px",
     height: "200px",
     borderRadius: "50%",
-    border: "5px solid white", // Cambia el color del borde
     objectFit: "cover",
-    boxShadow: "0 8px 16px rgba(0,0,0,0.2)"
+    border: "4px solid #ff0000",
+    boxShadow: "0 0 30px rgba(255, 0, 0, 0.5)",
   },
-
-  // Contenedor de texto del header
-  textContainer: {
-    flex: 1,
-    textAlign: "left"
-  },
-
-  // Tu nombre
   name: {
-    fontSize: "3rem",
-    fontWeight: "bold",
-    margin: "0 0 0.5rem 0"
+    fontSize: "48px",
+    color: "#ff0000",
+    marginBottom: "10px",
+    fontFamily: "Creepster, cursive",
+    textShadow: "0 0 15px #ff0000",
   },
-
-  // Tu rol/título
   role: {
-    fontSize: "1.5rem",
-    opacity: 0.9,
-    margin: 0
+    fontSize: "24px",
+    color: "#b0b0b0",
+    fontStyle: "italic",
   },
 
-  // Sección de información (biografía, habilidades)
-  infoSection: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "3rem 2rem",
-    flex: 1
+  // Estilos de Info
+  info: {
+    padding: "60px 40px",
   },
-
-  // Título de las secciones (Sobre mí, Habilidades)
   sectionTitle: {
-    fontSize: "2rem",
-    fontWeight: "bold",
-    marginBottom: "1rem",
-    color: "#00f2fe" // Cambia este color para que combine con tu header
+    fontSize: "32px",
+    color: "#ff0000",
+    marginBottom: "20px",
+    fontWeight: "700",
   },
-
-  // Texto de la biografía
-  bioText: {
-    fontSize: "1.1rem",
+  bio: {
+    fontSize: "18px",
+    color: "#b0b0b0",
     lineHeight: "1.8",
-    color: "#333",
-    marginBottom: "2rem"
   },
-
-  // Contenedor de las habilidades
-  skillsContainer: {
+  skills: {
     display: "flex",
     flexWrap: "wrap",
-    gap: "1rem",
-    marginTop: "1rem"
+    gap: "15px",
+  },
+  skillTag: {
+    background: "linear-gradient(90deg, #8b0000 0%, #b30000 100%)",
+    color: "#fff",
+    padding: "10px 20px",
+    borderRadius: "20px",
+    fontSize: "16px",
+    fontWeight: "600",
+    border: "1px solid #ff0000",
   },
 
-  // Cada badge de habilidad
-  skillBadge: {
-    background: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)", // Igual que el header
-    color: "white",
-    padding: "0.5rem 1.5rem",
-    borderRadius: "25px",
-    fontSize: "1rem",
-    fontWeight: "500",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+  // Estilos de Sections
+  sections: {
+    padding: "0 40px 60px",
   },
-
-  // Sección de películas/música
-  customSection: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "2rem",
-    backgroundColor: "#f8f9fa"
+  section: {
+    background: "linear-gradient(135deg, #1a1a1a 0%, #2a1a1a 100%)",
+    border: "2px solid #333",
+    borderRadius: "12px",
+    padding: "30px",
   },
-
-  // Botón para expandir/colapsar
   toggleButton: {
-    background: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    color: "white",
-    border: "none",
-    padding: "1rem 2rem",
-    fontSize: "1.2rem",
-    borderRadius: "8px",
-    cursor: "pointer",
-    width: "100%",
-    textAlign: "left",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    fontWeight: "600",
-    transition: "transform 0.2s",
-    marginBottom: "1rem"
+    width: "100%",
+    background: "transparent",
+    border: "none",
+    cursor: "pointer",
+    padding: "0",
   },
-
-  // Contenedor de las tarjetas (películas/música)
-  cardsContainer: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-    gap: "1.5rem",
-    marginTop: "1.5rem"
+  buttonText: {
+    fontSize: "24px",
+    color: "#ff0000",
+    fontWeight: "700",
   },
-
-  // Cada tarjeta individual
-  card: {
-    backgroundColor: "white",
-    padding: "1.5rem",
-    borderRadius: "12px",
-    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-    transition: "transform 0.2s, box-shadow 0.2s"
+  arrow: {
+    fontSize: "20px",
+    color: "#ff0000",
   },
-
-  // Título de cada tarjeta
-  cardTitle: {
-    fontSize: "1.3rem",
-    fontWeight: "bold",
-    marginBottom: "0.5rem",
-    color: "#00f2fe" // Cambia para que combine con tu tema
+  list: {
+    listStyle: "none",
+    padding: 0,
+    margin: "20px 0 0 0",
   },
-
-  // Subtítulo de la tarjeta
-  cardSubtitle: {
-    fontSize: "1rem",
-    color: "#666",
-    marginBottom: "1rem"
+  listItem: {
+    marginBottom: "12px",
   },
-
-  // Texto descriptivo de la tarjeta
-  cardText: {
-    fontSize: "1rem",
-    lineHeight: "1.6",
-    color: "#333"
-  }
+  link: {
+    fontSize: "16px",
+    color: "#b0b0b0",
+    textDecoration: "none",
+    transition: "color 0.3s ease",
+  },
 };

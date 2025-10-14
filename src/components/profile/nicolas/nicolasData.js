@@ -1,59 +1,32 @@
-// Datos personales de Nicolás
-// Aquí puedes modificar toda tu información personal
-
+// Datos personalizados del perfil de Nicolás
 export const nicolasData = {
   name: "Nicolás",
-  role: "Desarrollador Frontend",
-  image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
-  bio: "Soy Nicolás y me apasiona el desarrollo web. Aquí puedes escribir tu biografía personal, hablar sobre tus intereses, tu experiencia, lo que te motiva en el mundo de la programación, etc.",
-  
-  // Puedes agregar o quitar habilidades
+  role: "Project Manager",
+  image: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=400&fit=crop",
+  bio: "Líder y organizador del equipo con habilidades en gestión de proyectos y coordinación. Me aseguro de que todos trabajemos en armonía hacia nuestros objetivos comunes, manteniendo la comunicación fluida y los plazos bajo control.",
   skills: [
-    "JavaScript",
-    "React",
-    "CSS",
-    "HTML",
-    "Git"
+    "Project Management",
+    "Team Leadership",
+    "Agile",
+    "Communication",
+    "Planning",
   ],
-  
-  // Películas favoritas - puedes agregar tantas como quieras
   movies: [
     {
-      title: "Película 1",
-      year: 2020,
-      director: "Director 1",
-      reason: "¿Por qué te gusta esta película?"
+      title: "The Social Network",
+      url: "https://www.imdb.com/title/tt1285016/",
     },
-    {
-      title: "Película 2",
-      year: 2019,
-      director: "Director 2",
-      reason: "¿Qué te llamó la atención de esta película?"
-    },
-    {
-      title: "Película 3",
-      year: 2018,
-      director: "Director 3",
-      reason: "¿Qué te transmitió esta película?"
-    }
+    { title: "Steve Jobs", url: "https://www.imdb.com/title/tt2080374/" },
+    { title: "Moneyball", url: "https://www.imdb.com/title/tt1210166/" },
   ],
-  
-  // Música favorita - personaliza con tus artistas/bandas
   music: [
     {
-      artist: "Artista/Banda 1",
-      genre: "Género musical",
-      reason: "¿Por qué te gusta?"
+      title: "Eye of the Tiger - Survivor",
+      url: "https://www.youtube.com/watch?v=btPJPFnesV4",
     },
     {
-      artist: "Artista/Banda 2",
-      genre: "Género musical",
-      reason: "¿Qué te transmite su música?"
+      title: "Don't Stop Me Now - Queen",
+      url: "https://www.youtube.com/watch?v=HgzGwKwLmgM",
     },
-    {
-      artist: "Artista/Banda 3",
-      genre: "Género musical",
-      reason: "¿Cuál es tu canción favorita?"
-    }
-  ]
+  ],
 };

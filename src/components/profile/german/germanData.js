@@ -1,59 +1,32 @@
-// Datos personales de Germán
-// Aquí puedes modificar toda tu información personal
-
+// Datos personalizados del perfil de Germán
 export const germanData = {
   name: "Germán",
-  role: "Desarrollador Frontend",
-  image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-  bio: "Soy Germán y me apasiona el desarrollo web. Aquí puedes escribir tu biografía personal, hablar sobre tus intereses, tu experiencia, lo que te motiva en el mundo de la programación, etc.",
-  
-  // Puedes agregar o quitar habilidades
+  role: "Full Stack Developer",
+  image: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=400&h=400&fit=crop",
+  bio: "Desarrollador Full Stack apasionado por Python, Pascal e Inteligencia Artificial. Me encanta resolver problemas complejos y crear soluciones innovadoras que marquen la diferencia.",
   skills: [
-    "JavaScript",
-    "React",
-    "CSS",
-    "HTML",
-    "Git"
+    "Python",
+    "Pascal",
+    "IA",
+    "Machine Learning",
+    "Backend Development",
   ],
-  
-  // Películas favoritas - puedes agregar tantas como quieras
   movies: [
     {
-      title: "Película 1",
-      year: 2020,
-      director: "Director 1",
-      reason: "¿Por qué te gusta esta película?"
+      title: "The Dark Knight",
+      url: "https://www.imdb.com/title/tt0468569/",
     },
-    {
-      title: "Película 2",
-      year: 2019,
-      director: "Director 2",
-      reason: "¿Qué te llamó la atención de esta película?"
-    },
-    {
-      title: "Película 3",
-      year: 2018,
-      director: "Director 3",
-      reason: "¿Qué te transmitió esta película?"
-    }
+    { title: "Inception", url: "https://www.imdb.com/title/tt1375666/" },
+    { title: "Interstellar", url: "https://www.imdb.com/title/tt0816692/" },
   ],
-  
-  // Música favorita - personaliza con tus artistas/bandas
   music: [
     {
-      artist: "Artista/Banda 1",
-      genre: "Género musical",
-      reason: "¿Por qué te gusta?"
+      title: "Bohemian Rhapsody - Queen",
+      url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
     },
     {
-      artist: "Artista/Banda 2",
-      genre: "Género musical",
-      reason: "¿Qué te transmite su música?"
+      title: "Stairway to Heaven - Led Zeppelin",
+      url: "https://www.youtube.com/watch?v=QkF3oxziUI4",
     },
-    {
-      artist: "Artista/Banda 3",
-      genre: "Género musical",
-      reason: "¿Cuál es tu canción favorita?"
-    }
-  ]
+  ],
 };
