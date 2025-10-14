@@ -18,7 +18,7 @@ export default function Pokeball({ item, type }) {
         }}
       >
         <img 
-          src="/pokebola.png" 
+          src="/manu/pokebola.png" 
           alt="Pokebola" 
           style={styles.pokeballImage}
         />

@@ -21,7 +21,7 @@ const teamMembers = [
     id: "manuel",
     name: "Manuel",
     role: "Backend Developer",
-    image: "/manuel_img_perfil.png",
+    image: "/manu/manuel_img_perfil.png",
     description: "Especialista en arquitectura backend",
   },
   {
