@@ -14,14 +14,14 @@ const teamMembers = [
     name: "Juan",
     role: "Full Stack Developer",
     image:
-      "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+      "/juan/juan.png",
     description: "Desarrollador versátil y creativo",
   },
   {
     id: "manuel",
     name: "Manuel",
     role: "Backend Developer",
-    image: "/manu/manuel_img_perfil.png",
+    image: "/manuel/manuel_img_perfil.png",
     description: "Especialista en arquitectura backend",
   },
   {

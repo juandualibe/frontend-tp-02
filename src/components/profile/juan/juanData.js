@@ -2,7 +2,7 @@
 export const juanData = {
   name: "Juan",
   role: "Full Stack Developer",
-  image: "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=400&fit=crop",
+  image: "/juan/juan.png",
   bio: "Desarrollador versátil y creativo con experiencia en múltiples tecnologías. Me apasiona el diseño de interfaces y la experiencia de usuario, siempre buscando crear productos que sean tanto funcionales como estéticamente agradables.",
   skills: ["JavaScript", "React", "Node.js", "UI/UX Design", "Full Stack"],
   movies: [

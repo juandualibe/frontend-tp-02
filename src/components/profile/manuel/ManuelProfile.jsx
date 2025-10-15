@@ -23,7 +23,7 @@ export default function ManuelProfile() {
           playsInline
           style={styles.headerVideo}
         >
-          <source src="/manu/manuel_video_header.mp4" type="video/mp4" />
+          <source src="/manuel/manuel_video_header.mp4" type="video/mp4" />
         </video>
         {/* Contenido del header */}
         <div style={styles.headerContent(isTablet)}>

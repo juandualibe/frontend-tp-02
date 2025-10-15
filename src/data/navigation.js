@@ -2,7 +2,7 @@ export const navigationLinks = [
   { path: "/", label: "Inicio", icon: "🏠" },
   { path: "/bitacora", label: "Bitácora", icon: "📝" },
   { path: "/antiheroes", label: "Antiheroes", icon: "🦹" },
-  { path: "/api-data", label: "API Comics", icon: "📚" },
+  { path: "/api-data", label: "Series Anti-Héroe", icon: "📺" }, // <--- ¡Actualizado!
   { path: "/diagrams", label: "Diagramas", icon: "🗂️" },
 ];
 
