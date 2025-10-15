@@ -117,11 +117,9 @@ npm run lint     # Ejecuta el linter
 
 ## 📦 Despliegue
 
-El proyecto está optimizado para desplegarse en plataformas como:
+El proyecto está optimizado para desplegarse en:
 
-- **Vercel** (recomendado para React)
-- **Netlify**
-- **GitHub Pages**
+- **Vercel** ([recomendado para React](https://frontend-tp-02.vercel.app/))
 
 ## 👥 Equipo de Desarrollo
 
