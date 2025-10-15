@@ -87,7 +87,7 @@ export default function BitacoraContent() {
         "TVMaze API pública para obtener datos de series en tiempo real (https://www.tvmaze.com/api)",
         "Sistema de búsqueda en tiempo real filtrando por nombre de personaje",
         "Filtros por universo (Marvel, DC, The Boys, Invincible, Otros) para la galería JSON",
-        "Paginación con 12 resultados por página para la sección de API",
+        "Paginación dinámica responsive que se adapta al tamaño de pantalla",
         "Manejo de estados: loading (cargando), error (falló la petición), success (datos cargados)",
       ],
     },
@@ -116,26 +116,6 @@ export default function BitacoraContent() {
         "Git & GitHub - Control de versiones y colaboración del equipo",
       ],
     },
-    {
-      title: "✅ Cumplimiento de Consignas del TP2",
-      items: [
-        "✓ Migración completa de sitio estático (TP1) a SPA con React",
-        "✓ Sidebar con logo y menú vertical funcional en todos los dispositivos",
-        "✓ Sección portada con presentación del equipo (HomePage)",
-        "✓ Bitácora documentando el proceso de desarrollo (esta sección)",
-        "✓ Sección individual por cada integrante con perfiles personalizados",
-        "✓ Sección con datos desde JSON local (antiheroes.json con 20+ objetos)",
-        "✓ Sección con datos desde API pública (TVMaze API con manejo de estados)",
-        "✓ Árbol de renderizado mostrando jerarquía completa de componentes",
-        "✓ Diagrama de organización de carpetas del proyecto",
-        "✓ React Router implementado en todas las secciones",
-        "✓ Diseño responsive con 3 puntos de quiebre",
-        "✓ Componentización con elementos reutilizables",
-        "✓ README.md actualizado con documentación completa",
-        "✓ Repositorio en GitHub con commits organizados",
-        "✓ Deploy funcional en Vercel (próximamente)",
-      ],
-    },
   ];
 
   return (
@@ -143,7 +123,7 @@ export default function BitacoraContent() {
       <div style={styles.header}>
         <h1 style={styles.title}>📔 Bitácora del Proyecto</h1>
         <p style={styles.subtitle}>
-          Documentación completa del proceso de migración de HTML/CSS/JS a React SPA
+          Documentación del proceso de migración de HTML/CSS/JS a React SPA
         </p>
         <p style={styles.team}>
           Grupo 3 - Germán, Juan, Manuel, Nicolás
@@ -162,11 +142,12 @@ export default function BitacoraContent() {
 
       <div style={styles.footer}>
         <p style={styles.footerText}>
-          Esta bitácora documenta el trabajo colaborativo del Grupo 3 en el desarrollo 
-          del TP2 de Frontend, cumpliendo con todos los requisitos solicitados.
+          Este proyecto representó un desafío técnico significativo que nos permitió 
+          profundizar en el desarrollo moderno con React, mejorando nuestras habilidades 
+          en arquitectura de componentes, gestión de estado y trabajo colaborativo.
         </p>
         <p style={styles.footerDate}>
-          Proyecto completado - 2025
+          Trabajo Práctico N°2 - Frontend - 2025
         </p>
       </div>
     </section>
