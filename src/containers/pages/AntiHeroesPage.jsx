@@ -1,8 +1,10 @@
+// src/containers/pages/AntiHeroesPage.jsx
 "use client";
 
 import AntiHeroesHeader from "../../components/antiheroes/AntiHeroesHeader";
 import AntiHeroesControls from "../../components/antiheroes/AntiHeroesControls";
 import AntiHeroesGrid from "../../components/antiheroes/AntiHeroesGrid";
+import Pagination from "../../components/antiheroes/Pagination"; // 🆕 Importar componente de paginación
 import { useAntiHeroes } from "../../components/antiheroes/useAntiHeroes";
 
 export default function AntiHeroesPage() {
@@ -14,6 +16,10 @@ export default function AntiHeroesPage() {
     searchTerm,
     setSearchTerm,
     universes,
+    page, // 🆕
+    totalPaginas, // 🆕
+    handlePrevPage, // 🆕
+    handleNextPage, // 🆕
   } = useAntiHeroes();
 
   return (
@@ -33,6 +39,15 @@ export default function AntiHeroesPage() {
           setSearchTerm={setSearchTerm}
           setSelectedUniverse={setSelectedUniverse}
         />
+        {/* 🆕 Componente de paginación */}
+        {totalPaginas > 1 && (
+          <Pagination
+            currentPage={page}
+            totalPages={totalPaginas}
+            onPrevPage={handlePrevPage}
+            onNextPage={handleNextPage}
+          />
+        )}
       </section>
     </div>
   );
@@ -45,7 +60,7 @@ const styles = {
   },
   content: {
     margin: "0 auto",
-    padding: "clamp(30px, 6vw, 60px) clamp(20px, 4vw, 40px)", // Responsive padding
+    padding: "clamp(30px, 6vw, 60px) clamp(20px, 4vw, 40px)",
     maxWidth: "1400px",
   },
 };
