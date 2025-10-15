@@ -20,6 +20,7 @@ export const germanStyles = {
     height: "200px",
     borderRadius: "50%",
     objectFit: "cover",
+    objectPosition: "center top",
     border: "4px solid #ff0000",
     boxShadow: "0 0 30px rgba(255, 0, 0, 0.5)",
   },

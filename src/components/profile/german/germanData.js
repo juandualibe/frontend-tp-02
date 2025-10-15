@@ -2,7 +2,7 @@
 export const germanData = {
   name: "Germán",
   role: "Full Stack Developer",
-  image: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=400&h=400&fit=crop",
+  image: "/ger/german_perfil.png",
   bio: "Desarrollador Full Stack apasionado por Python, Pascal e Inteligencia Artificial. Me encanta resolver problemas complejos y crear soluciones innovadoras que marquen la diferencia.",
   skills: [
     "Python",
