@@ -1,9 +1,7 @@
 "use client";
 
-import Sidebar from "../../components/navigation/Sidebar";
 import ApiDataHeader from "../../components/api-data/ApiDataHeader";
 import ApiDataContent from "../../components/api-data/ApiDataContent";
-import Footer from "../../components/navigation/Footer";
 import { useApiData } from "../../components/api-data/useApiData";
 
 export default function ApiDataPage() {
@@ -12,6 +10,7 @@ export default function ApiDataPage() {
     loading,
     error,
     page,
+    totalPaginas, // <--- 1. RECIBE EL VALOR DESDE EL HOOK
     handlePrevPage,
     handleNextPage,
     fetchComics,
@@ -26,6 +25,7 @@ export default function ApiDataPage() {
           loading={loading}
           error={error}
           page={page}
+          totalPaginas={totalPaginas} // <--- 2. PÁSALO COMO PROP A ApiDataContent
           handlePrevPage={handlePrevPage}
           handleNextPage={handleNextPage}
           fetchComics={fetchComics}

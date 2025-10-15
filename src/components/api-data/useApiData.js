@@ -84,10 +84,11 @@ export function useApiData() {
   };
 
   return {
-    comics: seriesMostradas, // Devolvemos solo las series de la página actual
+    comics: seriesMostradas,
     loading,
     error,
     page,
+    totalPaginas, // <--- ¡AQUÍ ESTÁ LA CORRECCIÓN!
     handlePrevPage,
     handleNextPage,
     fetchComics: () => {},

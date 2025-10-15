@@ -1,3 +1,5 @@
+// src/components/api-data/ApiDataContent.jsx
+
 import LoadingSpinner from "./LoadingSpinner";
 import ErrorMessage from "./ErrorMessage";
 import ComicsGrid from "./ComicsGrid";
@@ -8,6 +10,7 @@ export default function ApiDataContent({
   loading,
   error,
   page,
+  totalPaginas, // <--- 1. ¡AHORA RECIBE EL DATO!
   handlePrevPage,
   handleNextPage,
   fetchComics,
@@ -19,15 +22,20 @@ export default function ApiDataContent({
   if (error) {
     return <ErrorMessage error={error} fetchComics={fetchComics} />;
   }
-
+  
   return (
     <>
       <ComicsGrid comics={comics} />
-      <Pagination
-        page={page}
-        handlePrevPage={handlePrevPage}
-        handleNextPage={handleNextPage}
-      />
+
+      {/* Solo muestra la paginación si hay más de una página */}
+      {totalPaginas > 1 && (
+        <Pagination
+          page={page}
+          totalPaginas={totalPaginas} // <--- 2. ¡Y AHORA SE LO PASA AL COMPONENTE HIJO!
+          handlePrevPage={handlePrevPage}
+          handleNextPage={handleNextPage}
+        />
+      )}
     </>
   );
 }
