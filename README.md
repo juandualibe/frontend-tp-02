@@ -119,7 +119,7 @@ npm run lint     # Ejecuta el linter
 
 El proyecto está optimizado para desplegarse en:
 
-- **Vercel** ([recomendado para React](https://frontend-tp-02.vercel.app/))
+- **Vercel** [(https://frontend-tp-02.vercel.app/)]
 
 ## 👥 Equipo de Desarrollo
 
