@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer style={styles.footer}>
       <p style={styles.footerText}>
-        © 2025 Grupo 3 - Antiheroes Edition. Todos los derechos reservados.
+        © 2025 Tree Group - Antiheroes Edition. Todos los derechos reservados.
       </p>
     </footer>
   );
