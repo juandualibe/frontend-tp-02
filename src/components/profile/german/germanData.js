@@ -13,20 +13,21 @@ export const germanData = {
   ],
   movies: [
     {
-      title: "The Dark Knight",
-      url: "https://www.imdb.com/title/tt0468569/",
+      title: "Volver al futuro",
+      url: "https://www.youtube.com/watch?v=NZMtvziROC0",
     },
-    { title: "Inception", url: "https://www.imdb.com/title/tt1375666/" },
-    { title: "Interstellar", url: "https://www.imdb.com/title/tt0816692/" },
+    { title: "Rocky", url: "https://www.youtube.com/watch?v=-Hk-LYcavrw" },
+    { title: "El padrino", url: "https://www.youtube.com/watch?v=gCVj1LeYnsc" },
   ],
   music: [
     {
-      title: "Bohemian Rhapsody - Queen",
-      url: "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+      title: "Richard Ashcroft",
+      url: "https://www.youtube.com/watch?v=1hV2up62i1I",
     },
     {
-      title: "Stairway to Heaven - Led Zeppelin",
-      url: "https://www.youtube.com/watch?v=QkF3oxziUI4",
+      title: "The Rasmus",
+      url: "https://www.youtube.com/watch?v=XTUARaFZquI",
     },
+    { title: "Gustavo Cerati", url: "https://www.youtube.com/watch?v=iluWuweGX7s" },
   ],
 };

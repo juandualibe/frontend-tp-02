@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Germán",
     role: "Full Stack Developer",
     image:
-      "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=400&h=400&fit=crop",
+      "/ger/german_perfil.png",
     description: "Experto en Python, Pascal e IA",
   },
   {

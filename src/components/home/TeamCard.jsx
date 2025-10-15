@@ -7,7 +7,8 @@ export default function TeamCard({ member }) {
         <img
           src={member.image || "/placeholder.svg"}
           alt={member.name}
-          style={styles.cardImage}
+          style={{...styles.cardImage,
+          objectPosition: member.id === "german" ? "center 10%" : "center",}}
         />
       </div>
       <div style={styles.cardContent}>
