@@ -1,6 +1,4 @@
 // Estilos personalizados para el perfil de Germán
-// Puedes modificar estos estilos libremente sin afectar a otros perfiles
-
 export const germanStyles = {
   // Estilos del Header
   header: {

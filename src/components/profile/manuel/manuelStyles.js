@@ -1,6 +1,4 @@
 // Estilos personalizados para el perfil de Manuel
-// Puedes modificar estos estilos libremente sin afectar a otros perfiles
-
 export const manuelStyles = {
   // Estilos del Header
   header: {

@@ -1,6 +1,4 @@
 // Estilos personalizados para el perfil de Juan
-// Puedes modificar estos estilos libremente sin afectar a otros perfiles
-
 export const juanStyles = {
   // Estilos del Header
   header: {
