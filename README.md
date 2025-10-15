@@ -23,9 +23,10 @@ El salto tecnológico del TP1 al TP2 ha sido el núcleo de este trabajo.
 
 ## 📁 Nueva Estructura de Archivos
 
-La estructura del proyecto fue completamente rediseñada para adaptarse al ecosistema de React, favoreciendo la modularidad y la organización por funcionalidad.
+La arquitectura del proyecto fue completamente rediseñada para el ecosistema de React, favoreciendo la modularidad y una clara separación de responsabilidades.
 
-/
+```
+frontendtp02/
 ├── public/                   # Archivos estáticos servidos directamente
 │   ├── logo.ico              # Favicon de la aplicación
 │   ├── german/               # Assets del perfil de Germán
@@ -33,44 +34,45 @@ La estructura del proyecto fue completamente rediseñada para adaptarse al ecosi
 │   ├── manuel/               # Assets del perfil de Manuel
 │   └── nicolas/              # Assets del perfil de Nicolás
 │
-└── src/                      # Código fuente de la aplicación React
-├── components/           # Componentes de UI reutilizables, organizados por funcionalidad
-│   ├── api-data/         # Componentes para la sección de la API (Header, Grid, Card, Pagination...)
-│   ├── antiheroes/       # Componentes para la galería JSON (Header, Grid, Card, Controls...)
-│   ├── bitacora/         # Componentes para la sección Bitácora
-│   ├── diagrams/         # Componentes para los diagramas de arquitectura
-│   ├── home/             # Componentes para la página de inicio (Hero, TeamSection, TeamCard)
-│   ├── navigation/       # Componentes de navegación global (Sidebar, Footer)
-│   └── profile/          # Componentes de los perfiles individuales, con subcarpetas por miembro
+├── src/                      # Código fuente de la aplicación React
+│   ├── components/           # Componentes de UI reutilizables, organizados por funcionalidad
+│   │   ├── api-data/         # Componentes para la sección de la API (Header, Grid, Card, Pagination...)
+│   │   ├── antiheroes/       # Componentes para la galería JSON (Header, Grid, Card, Controls...)
+│   │   ├── bitacora/         # Componentes para la sección Bitácora
+│   │   ├── diagrams/         # Componentes para los diagramas de arquitectura
+│   │   ├── home/             # Componentes para la página de inicio (Hero, TeamSection, TeamCard)
+│   │   ├── navigation/       # Componentes de navegación global (Sidebar, Footer)
+│   │   └── profile/          # Componentes de los perfiles individuales, con subcarpetas por miembro
+│   │
+│   ├── containers/
+│   │   └── pages/            # Componentes que actúan como páginas completas para cada ruta
+│   │       ├── HomePage.jsx
+│   │       ├── AntiHeroesPage.jsx
+│   │       ├── ApiDataPage.jsx
+│   │       ├── BitacoraPage.jsx
+│   │       ├── DiagramsPage.jsx
+│   │       └── ProfilePage.jsx
+│   │
+│   ├── data/                 # Datos estáticos de la aplicación
+│   │   ├── antiheroes.json   # Base de datos local para la galería de anti-héroes
+│   │   └── navigation.js     # Define los enlaces del Sidebar
+│   │
+│   ├── hooks/                # Custom Hooks con lógica de estado reutilizable
+│   │   └── MediaQuery.js     # Hook para detectar cambios en el tamaño de la pantalla
+│   │
+│   ├── layout/               # Componente de estructura principal de la UI
+│   │   └── layout.jsx        # Define la estructura con Sidebar, contenido principal y Footer
+│   │
+│   ├── router/               # Configuración del enrutamiento de la SPA
+│   │   └── AppRouter.jsx     # Define todas las rutas de la aplicación con React Router
+│   │
+│   ├── styles/               # Archivos de estilos globales
+│   │   └── global.css        # CSS reset y estilos base para toda la app
 │
-├── containers/
-│   └── pages/            # Componentes que actúan como páginas completas para cada ruta
-│       ├── HomePage.jsx
-│       ├── AntiHeroesPage.jsx
-│       ├── ApiDataPage.jsx
-│       ├── BitacoraPage.jsx
-│       ├── DiagramsPage.jsx
-│       └── ProfilePage.jsx
-│
-├── data/                 # Datos estáticos de la aplicación
-│   ├── antiheroes.json   # Base de datos local para la galería de anti-héroes
-│   └── navigation.js     # Define los enlaces del Sidebar
-│
-├── hooks/                # Custom Hooks con lógica de estado reutilizable
-│   └── MediaQuery.js     # Hook para detectar cambios en el tamaño de la pantalla
-│
-├── layout/               # Componente de estructura principal de la UI
-│   └── layout.jsx        # Define la estructura con Sidebar, contenido principal y Footer
-│
-├── router/               # Configuración del enrutamiento de la SPA
-│   └── AppRouter.jsx     # Define todas las rutas de la aplicación con React Router
-│
-├── styles/               # Archivos de estilos globales
-│   └── global.css        # CSS reset y estilos base para toda la app
-│
-├── App.jsx               # Componente raíz que renderiza el router
-├── index.css             # Estilos iniciales para el #root
-└── main.jsx              # Punto de entrada de la aplicación, donde React se monta en el DOM
+├── App.jsx                   # Componente raíz que renderiza el router
+├── index.css                 # Estilos iniciales para el #root
+└── main.jsx                  # Punto de entrada de la aplicación, donde React se monta en el DOM
+```
 
 ## ✨ Características Destacadas del TP2
 
