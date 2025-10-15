@@ -11,8 +11,14 @@ export default function ManuelProfile() {
   const [showMusic, setShowMusic] = useState(false);
   const isTablet = useMediaQuery("(min-width: 768px)");
 
+  const socialLinks = [
+    { name: "Facebook", icon: "/manuel/icon-facebook.png", url: "https://www.facebook.com/jmgasbarro" },
+    { name: "Instagram", icon: "/manuel/icon-instagram.png", url: "https://www.instagram.com/jmgasbarro/" },
+    { name: "LinkedIn", icon: "/manuel/icon-linkedin.png", url: "https://www.linkedin.com/in/jmgasbarro/" },
+  ];
+
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div style={{ minHeight: "100vh", position: "relative" }}>
       {/* Header Section */}
       <section style={styles.header}>
         {/* Video de fondo */}
@@ -25,6 +31,7 @@ export default function ManuelProfile() {
         >
           <source src="/manuel/manuel_video_header.mp4" type="video/mp4" />
         </video>
+        
         {/* Contenido del header */}
         <div style={styles.headerContent(isTablet)}>
           <img
@@ -36,6 +43,34 @@ export default function ManuelProfile() {
             <h1 style={styles.name}>{manuelData.name}</h1>
             <p style={styles.role}>{manuelData.role}</p>
           </div>
+        </div>
+        
+        {/* Social Media Icons - Sobre la línea divisoria */}
+        <div style={styles.socialMediaHeaderContainer}>
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.socialIconHeader}
+              title={social.name}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.15) translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 8px 30px rgba(255, 0, 0, 0.6)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1) translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 15px rgba(255, 0, 0, 0.4)";
+              }}
+            >
+              <img
+                src={social.icon}
+                alt={social.name}
+                style={styles.socialIconImage}
+              />
+            </a>
+          ))}
         </div>
       </section>
 
