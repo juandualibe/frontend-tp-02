@@ -74,18 +74,15 @@ export const juanStyles = {
   }),
   
   profileImage: {
-    width: "220px",
-    height: "220px",
-    borderRadius: "50%",
-    objectFit: "cover",
-    border: "5px solid #ff0000",
-    boxShadow: "0 0 30px rgba(255, 0, 0, 0.9), 0 0 60px rgba(255, 0, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.5)",
-    transition: "transform 0.3s ease, boxShadow 0.3s ease",
-    cursor: "pointer",
-    animation: "pulse 3s infinite",
-    position: "relative",
-    zIndex: 3,
-  },
+  width: "200px",
+  height: "200px",
+  borderRadius: "50%",
+  objectFit: "cover",
+  border: "4px solid #ff0000",
+  boxShadow: "0 0 30px rgba(255, 0, 0, 0.5)",
+  transition: "transform 0.3s ease",
+  cursor: "pointer",
+},
   
   name: {
     fontSize: "52px",
