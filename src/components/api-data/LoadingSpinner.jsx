@@ -2,7 +2,7 @@ export default function LoadingSpinner() {
   return (
     <div style={styles.loadingContainer}>
       <div style={styles.spinner}></div>
-      <p style={styles.loadingText}>Cargando comics...</p>
+      <p style={styles.loadingText}>Cargando series...</p>
     </div>
   );
 }
