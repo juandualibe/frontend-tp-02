@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "../../hooks/MediaQuery";
 
 const seriesDeAntiheroes = [
   "The Boys", "The Punisher", "Peacemaker", "Loki", "Moon Knight",
@@ -12,15 +13,32 @@ const seriesDeAntiheroes = [
 ];
 
 export function useApiData() {
-  const [seriesMostradas, setSeriesMostradas] = useState([]); // <-- Estado para las series de la página actual
-  const [listaCompleta, setListaCompleta] = useState([]); // <-- Estado para guardar las 22 series
+  const [seriesMostradas, setSeriesMostradas] = useState([]);
+  const [listaCompleta, setListaCompleta] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(1); // <-- El estado de la página vuelve a ser importante
+  const [page, setPage] = useState(1);
 
-  const seriesPorPagina = 10; // <-- ¡NUEVO! Definimos cuántas series mostrar por página.
+  // 🆕 Detectar tamaño de pantalla
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isTablet = useMediaQuery("(min-width: 769px) and (max-width: 1024px)");
 
-  // --- PRIMER PASO: Se ejecuta 1 sola vez para buscar todas las series ---
+  // 🆕 Calcular series por página según el ancho de la ventana
+  const getSeriesPorPagina = () => {
+    if (isMobile) return 6; // Móvil: 1 columna x 6 filas
+    if (isTablet) return 8; // Tablet: 2 columnas x 4 filas
+    
+    // Desktop: calcular según el ancho real de la ventana
+    const width = window.innerWidth;
+    if (width >= 1920) return 15; // Pantallas muy grandes: 5 columnas x 3 filas
+    if (width >= 1600) return 12; // Pantallas grandes: 4 columnas x 3 filas
+    if (width >= 1200) return 12; // Desktop estándar: 4 columnas x 3 filas
+    return 9; // Desktop pequeño: 3 columnas x 3 filas
+  };
+
+  const seriesPorPagina = getSeriesPorPagina();
+
+  // Fetch de todas las series (solo 1 vez)
   useEffect(() => {
     const fetchTodasLasSeries = async () => {
       try {
@@ -28,24 +46,22 @@ export function useApiData() {
         const promesas = seriesDeAntiheroes.map(nombreSerie => {
           const url = `https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(nombreSerie)}`;
           return fetch(url).then(res => {
-            if (!res.ok) return null; // Si no encuentra una serie, devuelve null
+            if (!res.ok) return null;
             return res.json();
           });
         });
 
         const resultados = await Promise.all(promesas);
-        
-        // Filtramos los resultados nulos por si alguna serie no fue encontrada
         const seriesValidas = resultados.filter(show => show !== null);
         
         const transformedData = seriesValidas.map((show) => ({
           id: show.id,
           title: show.name,
           description: show.summary ? show.summary.replace(/<[^>]*>?/gm, '') : "Sinopsis no disponible.",
-          thumbnail: show.image.medium,
+          thumbnail: show.image?.medium || "",
         }));
 
-        setListaCompleta(transformedData); // Guardamos la lista completa de las 22 series
+        setListaCompleta(transformedData);
       } catch (err) {
         console.error(err);
         setError("Error al cargar las series. La API puede estar ocupada.");
@@ -56,19 +72,22 @@ export function useApiData() {
     fetchTodasLasSeries();
   }, []);
 
-  // --- SEGUNDO PASO: Se ejecuta cada vez que cambia la página o la lista completa está lista ---
+  // Actualizar series mostradas cuando cambia la página o la lista completa
   useEffect(() => {
     if (listaCompleta.length > 0) {
-      // Calculamos qué porción de la lista mostrar
       const inicio = (page - 1) * seriesPorPagina;
       const fin = inicio + seriesPorPagina;
       setSeriesMostradas(listaCompleta.slice(inicio, fin));
     }
-  }, [page, listaCompleta]); // Depende de 'page' y 'listaCompleta'
+  }, [page, listaCompleta, seriesPorPagina]);
+
+  // Resetear a página 1 cuando cambia el tamaño de pantalla
+  useEffect(() => {
+    setPage(1);
+  }, [seriesPorPagina]);
 
   const totalPaginas = Math.ceil(listaCompleta.length / seriesPorPagina);
 
-  // --- TERCER PASO: Reactivamos los manejadores de paginación ---
   const handlePrevPage = () => {
     if (page > 1) {
       setPage(page - 1);
@@ -88,7 +107,7 @@ export function useApiData() {
     loading,
     error,
     page,
-    totalPaginas, // <--- ¡AQUÍ ESTÁ LA CORRECCIÓN!
+    totalPaginas,
     handlePrevPage,
     handleNextPage,
     fetchComics: () => {},
