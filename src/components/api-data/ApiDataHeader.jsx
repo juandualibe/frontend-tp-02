@@ -1,9 +1,9 @@
 export default function ApiDataHeader({ page }) {
   return (
     <div style={styles.header}>
-      <h1 style={styles.title}>Comics desde API</h1>
+      <h1 style={styles.title}>Series de Anti-Héroes</h1>
       <p style={styles.subtitle}>
-        Datos obtenidos dinámicamente desde una API pública - Página {page + 1}
+        Datos obtenidos en tiempo real desde la API de TVMaze
       </p>
     </div>
   );

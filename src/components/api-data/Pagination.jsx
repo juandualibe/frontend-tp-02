@@ -1,17 +1,23 @@
-"use client";
+// src/components/api-data/Pagination.jsx
 
-export default function Pagination({ page, handlePrevPage, handleNextPage }) {
+export default function Pagination({ page, handlePrevPage, handleNextPage, totalPaginas }) {
   return (
     <div style={styles.pagination}>
       <button
-        style={styles.paginationButton}
+        style={{...styles.paginationButton, ...(page === 1 && styles.disabledButton)}}
         onClick={handlePrevPage}
-        disabled={page === 0}
+        disabled={page === 1}
       >
         ← Anterior
       </button>
-      <span style={styles.pageIndicator}>Página {page + 1}</span>
-      <button style={styles.paginationButton} onClick={handleNextPage}>
+
+      <span style={styles.pageIndicator}>Página {page} de {totalPaginas}</span>
+
+      <button
+        style={{...styles.paginationButton, ...(page === totalPaginas && styles.disabledButton)}}
+        onClick={handleNextPage}
+        disabled={page === totalPaginas}
+      >
         Siguiente →
       </button>
     </div>
@@ -36,7 +42,12 @@ const styles = {
     cursor: "pointer",
     fontWeight: "600",
     transition: "all 0.3s ease",
-    opacity: 1,
+  },
+  disabledButton: {
+    background: "#333",
+    borderColor: "#666",
+    color: "#888",
+    cursor: "not-allowed",
   },
   pageIndicator: {
     fontSize: "16px",

@@ -1,234 +1,60 @@
+// src/components/diagrams/FolderStructureDiagram.jsx
+
 export default function FolderStructureDiagram() {
   return (
     <div style={styles.diagramContainer}>
-      <h2 style={styles.diagramTitle}>
-        Organización de Carpetas (Refactorizada)
-      </h2>
+      <h2 style={styles.diagramTitle}>Organización de Carpetas</h2>
       <p style={styles.diagramDescription}>
-        Estructura mejorada siguiendo las mejores prácticas de React: separación
-        de páginas, componentes por feature, y lógica reutilizable.
+        Esta es la estructura de carpetas real del proyecto, organizada por funcionalidad para facilitar el mantenimiento y la escalabilidad.
       </p>
 
       <div style={styles.diagram}>
         <div style={styles.folderTree}>
-          <div style={styles.folderItem}>
-            <span style={styles.folderIcon}>📁</span>
-            <strong>FrontendTP02/</strong>
-          </div>
+          {/* Root Level */}
+          <div style={styles.folderItem}><strong>📁 frontend-tp-02/</strong></div>
 
+          {/* public Folder */}
           <div style={styles.folderLevel}>
             <div style={styles.folderItem}>
               <span style={styles.folderIcon}>📁</span>
+              <strong>public/</strong>
+              <span style={styles.folderNote}>Archivos estáticos y assets</span>
+            </div>
+            <div style={styles.folderLevel}>
+              <div style={styles.fileItem}><span style={styles.fileIcon}>🖼️</span> logo.ico</div>
+              <div style={styles.fileItem}><span style={styles.fileIcon}>📁</span> /german, /juan, /manuel, /nicolas</div>
+            </div>
+
+            {/* src Folder */}
+            <div style={styles.folderItem}>
+              <span style={styles.folderIcon}>📁</span>
               <strong>src/</strong>
-              <span style={styles.folderNote}>Configuración principal</span>
+              <span style={styles.folderNote}>Código fuente de la aplicación</span>
             </div>
             <div style={styles.folderLevel}>
-              <div style={styles.fileItem}>
-                <span style={styles.fileIcon}>⚛️</span>
-                App.jsx
-              </div>
-              <div style={styles.fileItem}>
-                <span style={styles.fileIcon}>🗺️</span>
-                routes.jsx
-              </div>
-            </div>
+              <div style={styles.fileItem}><span style={styles.fileIcon}>⚛️</span> App.jsx <span style={styles.folderNote}>Componente raíz</span></div>
+              <div style={styles.fileItem}><span style={styles.fileIcon}>🚀</span> main.jsx <span style={styles.folderNote}>Punto de entrada</span></div>
+              
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>components/</strong> <span style={styles.folderNote}>Componentes reutilizables</span></div>
+                <div style={styles.folderLevel}>
+                    <div style={styles.fileItem}><span style={styles.fileIcon}>📁</span> /api-data/, /antiheroes/, /bitacora/, /diagrams/, /home/, /navigation/, /profile/</div>
+                </div>
 
-            <div style={styles.folderItem}>
-              <span style={styles.folderIcon}>📁</span>
-              <strong>containers/</strong>
-              <span style={styles.folderNote}>Páginas principales</span>
-            </div>
-            <div style={styles.folderLevel}>
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                pages/
-              </div>
-              <div style={styles.folderLevel}>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  HomePage.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  BitacoraPage.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  ProfilePage.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  AntiHeroesPage.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  ApiDataPage.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>📄</span>
-                  DiagramsPage.jsx
-                </div>
-              </div>
-            </div>
-
-            <div style={styles.folderItem}>
-              <span style={styles.folderIcon}>📁</span>
-              <strong>components/</strong>
-              <span style={styles.folderNote}>
-                Componentes organizados por feature
-              </span>
-            </div>
-            <div style={styles.folderLevel}>
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                common/
-                <span style={styles.folderNote}>Compartidos</span>
-              </div>
-              <div style={styles.folderLevel}>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  Sidebar.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  Footer.jsx
-                </div>
-              </div>
-
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                home/
-              </div>
-              <div style={styles.folderLevel}>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  HeroSection.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  TeamSection.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  TeamCard.jsx
-                </div>
-              </div>
-
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                antiheroes/
-              </div>
-              <div style={styles.folderLevel}>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>🪝</span>
-                  useAntiHeroes.js
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  AntiHeroesHeader.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  AntiHeroesControls.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  SearchBar.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  UniverseFilter.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  AntiHeroesGrid.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  AntiHeroCard.jsx
-                </div>
-              </div>
-
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                api-data/
-              </div>
-              <div style={styles.folderLevel}>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>🪝</span>
-                  useApiData.js
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  ApiDataHeader.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  LoadingSpinner.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  ComicsGrid.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  ComicCard.jsx
-                </div>
-                <div style={styles.fileItem}>
-                  <span style={styles.fileIcon}>⚛️</span>
-                  Pagination.jsx
-                </div>
-              </div>
-
-              <div style={styles.folderItem}>
-                <span style={styles.folderIcon}>📁</span>
-                profile/, bitacora/, diagrams/
-                <span style={styles.folderNote}>... más componentes</span>
-              </div>
-            </div>
-
-            <div style={styles.folderItem}>
-              <span style={styles.folderIcon}>📁</span>
-              <strong>data/</strong>
-            </div>
-            <div style={styles.folderLevel}>
-              <div style={styles.fileItem}>
-                <span style={styles.fileIcon}>📊</span>
-                antiheroes.json
-              </div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>containers/pages/</strong> <span style={styles.folderNote}>Componentes de página</span></div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>data/</strong> <span style={styles.folderNote}>Datos locales (JSON)</span></div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>hooks/</strong> <span style={styles.folderNote}>Custom Hooks</span></div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>layout/</strong> <span style={styles.folderNote}>Estructura principal (Layout)</span></div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>router/</strong> <span style={styles.folderNote}>Configuración de rutas</span></div>
+              <div style={styles.folderItem}><span style={styles.folderIcon}>📁</span> <strong>styles/</strong> <span style={styles.folderNote}>Estilos globales</span></div>
             </div>
           </div>
         </div>
       </div>
-
-      <div style={styles.legend}>
-        <h3 style={styles.legendTitle}>Principios de Organización:</h3>
-        <ul style={styles.legendList}>
-          <li style={styles.legendItem}>
-            <strong>containers/pages/:</strong> Componentes de página que
-            orquestan la UI
-          </li>
-          <li style={styles.legendItem}>
-            <strong>components/common/:</strong> Componentes compartidos entre
-            múltiples páginas
-          </li>
-          <li style={styles.legendItem}>
-            <strong>components/[feature]/:</strong> Componentes específicos
-            agrupados por funcionalidad
-          </li>
-          <li style={styles.legendItem}>
-            <strong>Custom Hooks:</strong> Lógica reutilizable extraída
-            (useAntiHeroes, useApiData)
-          </li>
-          <li style={styles.legendItem}>
-            <strong>Separación de datos:</strong> profilesData.js centraliza
-            información de perfiles
-          </li>
-        </ul>
-      </div>
     </div>
   );
 }
+
+// ... (los 'styles' pueden quedar igual que los tenías)
 
 const styles = {
   diagramContainer: {
