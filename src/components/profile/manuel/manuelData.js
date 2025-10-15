@@ -13,36 +13,42 @@ export const manuelData = {
   ],
   movies: [
     { 
-      title: "The Matrix", 
-      url: "https://www.youtube.com/watch?v=vKQi3bBA1y8",
-      youtubeId: "vKQi3bBA1y8",
-      description: "Una obra maestra cyberpunk que revolucionó el cine de ciencia ficción. La realidad no es lo que parece."
+      title: "Toy Story", 
+      url: "https://www.youtube.com/watch?v=v-PjgYDrg70",
+      youtubeId: "v-PjgYDrg70",
+      description: "Una aventura mágica que revolucionó la animación. La historia de amistad entre juguetes que cobran vida cuando nadie los ve."
     },
     {
-      title: "Blade Runner 2049",
-      url: "https://www.youtube.com/watch?v=gCcx85zbxz4",
-      youtubeId: "gCcx85zbxz4",
-      description: "Secuela visualmente impresionante que explora la humanidad, la memoria y la identidad."
+      title: "About Time",
+      url: "https://www.youtube.com/watch?v=T7A810duHvw",
+      youtubeId: "T7A810duHvw",
+      description: "Una emotiva comedia romántica sobre apreciar cada momento de la vida. Con viajes en el tiempo que nos enseñan a valorar lo cotidiano."
     },
     { 
-      title: "Ex Machina", 
-      url: "https://www.youtube.com/watch?v=EoQuVnKhxaM",
-      youtubeId: "EoQuVnKhxaM",
-      description: "Un thriller psicológico fascinante sobre inteligencia artificial y la naturaleza de la consciencia."
+      title: "Forrest Gump", 
+      url: "https://www.youtube.com/watch?v=bLvqoHBptjg",
+      youtubeId: "bLvqoHBptjg",
+      description: "Una inspiradora historia sobre perseverancia, amor y destino. La vida es como una caja de bombones, nunca sabes lo que te va a tocar."
     },
   ],
   music: [
     {
-      title: "Radioactive - Imagine Dragons",
-      url: "https://www.youtube.com/watch?v=ktvTqknDobU",
-      youtubeId: "ktvTqknDobU",
-      description: "Un himno poderoso que habla sobre el despertar y la transformación personal."
+      title: "Viejo - Las Pastillas del Abuelo",
+      url: "https://www.youtube.com/watch?v=KXmBK1rdoS0",
+      youtubeId: "KXmBK1rdoS0",
+      description: "Una emotiva canción de rock argentino que habla sobre el paso del tiempo, la nostalgia y el amor incondicional hacia los seres queridos."
     },
     {
-      title: "Believer - Imagine Dragons",
-      url: "https://www.youtube.com/watch?v=7wtfhZwyrcc",
-      youtubeId: "7wtfhZwyrcc",
-      description: "Una canción intensa sobre superar el dolor y convertirlo en fortaleza."
+      title: "A Gritos de Esperanza - Alex Ubago",
+      url: "https://www.youtube.com/watch?v=oQI1fPPTAuo",
+      youtubeId: "oQI1fPPTAuo",
+      description: "Una balada pop llena de optimismo y fuerza. Un canto a la esperanza y a seguir adelante a pesar de las adversidades."
+    },
+    {
+      title: "Love of My Life - Queen",
+      url: "https://www.youtube.com/watch?v=sUJkCXE4sAA",
+      youtubeId: "sUJkCXE4sAA",
+      description: "Una de las baladas más hermosas de Queen. Freddie Mercury nos regala una oda al amor eterno con su voz inigualable."
     },
   ],
 };

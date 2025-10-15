@@ -132,28 +132,32 @@ export const manuelStyles = {
     padding: "20px",
   },
 
-  // Estilos de Redes Sociales en Header - Sobre la línea
-  socialMediaHeaderContainer: {
-    position: "absolute",
-    bottom: "10px",
-    right: "40px",
+  // Estilos de Redes Sociales en Header - Responsivo
+  socialMediaHeaderContainer: (isTablet) => ({
+    position: isTablet ? "absolute" : "relative",
+    bottom: isTablet ? "5px" : "0",
+    right: isTablet ? "40px" : "auto",
     display: "flex",
+    flexDirection: isTablet ? "row" : "column",
     gap: "15px",
     alignItems: "center",
+    justifyContent: "center",
     zIndex: 10,
-  },
+    marginTop: isTablet ? "0" : "20px",
+  }),
   socialIconHeader: {
     display: "block",
-    width: "60px",
-    height: "60px",
+    width: "50px",
+    height: "50px",
     borderRadius: "50%",
     background: "linear-gradient(135deg, #1a0a1a 0%, #2d0a1a 100%)",
     border: "3px solid #ff0000",
-    padding: "10px",
+    padding: "9px",
     transition: "all 0.3s ease",
     cursor: "pointer",
     boxShadow: "0 4px 15px rgba(255, 0, 0, 0.4)",
   },
+  
   socialIconImage: {
     width: "100%",
     height: "100%",
