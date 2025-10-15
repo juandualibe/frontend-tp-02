@@ -23,15 +23,37 @@ export default function JuanProfile() {
 
   return (
     <div style={{ minHeight: "100vh" }}>
-      {/* Header Section */}
+      {/* Header Section con imagen de fondo + partículas */}
       <section style={styles.header}>
+        {/* Imagen de fondo con efecto parallax */}
+        <div style={styles.backgroundImage} />
+        
+        {/* Overlay oscuro para mejorar legibilidad */}
+        <div style={styles.overlay} />
+
+        {/* Partículas animadas de fondo */}
+        <div style={styles.particlesContainer}>
+          {[...Array(25)].map((_, i) => (
+            <div
+              key={i}
+              style={{
+                ...styles.particle,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${5 + Math.random() * 10}s`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Contenido del header */}
         <div style={styles.headerContent(isTablet)}>
           <img
             src={juanData.image}
             alt={juanData.name}
             style={styles.profileImage}
           />
-          <div style={{ flex: 1, textAlign: isTablet ? "left" : "center" }}>
+          <div style={{ flex: 1, textAlign: isTablet ? "left" : "center", position: "relative", zIndex: 2 }}>
             <h1 style={styles.name}>{juanData.name}</h1>
             <p style={styles.role}>{juanData.role}</p>
             <p style={styles.location}>{juanData.location}</p>
