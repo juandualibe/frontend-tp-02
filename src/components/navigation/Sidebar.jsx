@@ -30,7 +30,7 @@ export default function Sidebar({ isOpen, onClose }) {
         }}
       >
         <div style={styles.logo}>
-          <h2 style={styles.logoText}>GRUPO 3</h2>
+          <h2 style={styles.logoText}>TREE GROUP</h2>
           <p style={styles.logoSubtext}>Antiheroes Edition</p>
         </div>
 

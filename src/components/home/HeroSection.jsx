@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section style={styles.hero}>
       <div style={styles.heroContent}>
         <h1 style={styles.heroTitle}>
-          Bienvenidos al <span style={styles.heroHighlight}>GRUPO 3</span>
+          Bienvenidos a <span style={styles.heroHighlight}>Tree Group</span>
         </h1>
         <p style={styles.heroSubtitle}>
           Un equipo de desarrolladores con actitud de antiheroes: rompemos las

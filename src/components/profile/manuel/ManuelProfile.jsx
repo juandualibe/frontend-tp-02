@@ -45,8 +45,8 @@ export default function ManuelProfile() {
           </div>
         </div>
         
-        {/* Social Media Icons - Sobre la línea divisoria */}
-        <div style={styles.socialMediaHeaderContainer}>
+        {/* Social Media Icons - Responsivos */}
+        <div style={styles.socialMediaHeaderContainer(isTablet)}>
           {socialLinks.map((social, index) => (
             <a
               key={index}

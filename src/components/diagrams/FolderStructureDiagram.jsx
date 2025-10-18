@@ -381,6 +381,11 @@ export default function FolderStructureDiagram() {
               <div style={styles.fileItem}><span style={styles.npmIcon}>📦</span> <code style={styles.code}>package.json</code> <span style={styles.fileNote}>Dependencias y scripts</span></div>
               <div style={styles.fileItem}><span style={styles.configIcon}>⚡</span> <code style={styles.code}>vite.config.js</code> <span style={styles.fileNote}>Configuración de Vite</span></div>
               <div style={styles.fileItem}><span style={styles.configIcon}>✅</span> <code style={styles.code}>eslint.config.js</code> <span style={styles.fileNote}>Reglas de linting</span></div>
+              <div style={styles.fileItem}>
+                <span style={styles.deployIcon}>🚀</span> 
+                <code style={styles.codeImportant}>vercel.json</code> 
+                <span style={styles.importantNote}>Configuración de deployment y rewrites para SPA</span>
+              </div>
               <div style={styles.fileItem}><span style={styles.gitIcon}>🌿</span> <code style={styles.code}>.gitignore</code> <span style={styles.fileNote}>Archivos ignorados por Git</span></div>
               <div style={styles.fileItem}><span style={styles.docIcon}>📖</span> <code style={styles.code}>README.md</code> <span style={styles.fileNote}>Documentación del proyecto</span></div>
             </div>
@@ -406,6 +411,9 @@ export default function FolderStructureDiagram() {
               <div>🪝 Custom Hook</div>
               <div>⚙️ Configuración</div>
             </div>
+            <div style={styles.legendItem}>
+              <div>🚀 Deployment</div>
+            </div>
           </div>
         </div>
 
@@ -419,6 +427,7 @@ export default function FolderStructureDiagram() {
             <li><strong>Custom Hooks:</strong> Lógica reutilizable extraída en <code style={styles.inlineCode}>/hooks</code></li>
             <li><strong>Componentes vs Páginas:</strong> Clara distinción entre UI reutilizable y contenedores de rutas</li>
             <li><strong>Estilos Modulares:</strong> CSS-in-JS por componente + estilos globales centralizados</li>
+            <li><strong>Configuración de Deployment:</strong> <code style={styles.inlineCode}>vercel.json</code> para rewrites y manejo correcto de rutas SPA</li>
           </ul>
         </div>
       </div>
@@ -500,6 +509,7 @@ const styles = {
   gitIcon: { fontSize: "16px", color: "#f76707" },
   docIcon: { fontSize: "16px", color: "#adb5bd" },
   profileIcon: { fontSize: "16px", color: "#4dabf7" },
+  deployIcon: { fontSize: "16px", color: "#00d9ff" }, // 🆕 Icono para deployment
   
   // Text styles
   rootText: {
